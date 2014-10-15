@@ -18,10 +18,12 @@ namespace _2DShooter
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Player ship = new Player(); 
+        Player ship = new Player();
+        Asteroid asteroid = new Asteroid();
+
         public Game1()
         {
-            graphics = new GraphicsDeviceManager(this);            
+            graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = false; // want the screen to be full?
             graphics.PreferredBackBufferWidth = 800; // the width of the screen
             graphics.PreferredBackBufferHeight = 750;
@@ -54,6 +56,8 @@ namespace _2DShooter
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ship.LoadContent(Content);
 
+            asteroid.LoadContent(Content);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -81,6 +85,7 @@ namespace _2DShooter
 
             // TODO: Add your update logic here
             ship.Update(gameTime);
+            asteroid.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -96,7 +101,9 @@ namespace _2DShooter
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             ship.Draw(spriteBatch);
+            asteroid.Draw(spriteBatch);
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }
