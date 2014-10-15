@@ -36,6 +36,7 @@ namespace _2DShooter
         public void LoadContent(ContentManager Content)
         {
             texture = Content.Load<Texture2D>("asteroid");
+
             //finding the center of our origin sprite
             origin.X = texture.Width / 2;
             origin.Y = texture.Height / 2;
