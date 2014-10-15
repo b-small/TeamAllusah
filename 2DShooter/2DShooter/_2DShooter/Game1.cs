@@ -18,7 +18,8 @@ namespace _2DShooter
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Player ship = new Player();
+        Player p = new Player();
+        Starfield sf = new Starfield();
         Asteroid asteroid = new Asteroid();
 
         public Game1()
@@ -54,7 +55,8 @@ namespace _2DShooter
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            ship.LoadContent(Content);
+            p.LoadContent(Content);
+            sf.LoadContent(Content);
 
             asteroid.LoadContent(Content);
 
@@ -84,7 +86,8 @@ namespace _2DShooter
                 this.Exit();
 
             // TODO: Add your update logic here
-            ship.Update(gameTime);
+            p.Update(gameTime);
+            sf.Update(gameTime);
             asteroid.Update(gameTime);
             base.Update(gameTime);
         }
@@ -100,7 +103,8 @@ namespace _2DShooter
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            ship.Draw(spriteBatch);
+            sf.Draw(spriteBatch);
+            p.Draw(spriteBatch);
             asteroid.Draw(spriteBatch);
             spriteBatch.End();
 
