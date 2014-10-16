@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_2DShooter", "..\..\..\..\Projects\TeamAllusah\2DShooter\_2DShooter\_2DShooter.csproj", "{3CA83C4B-1106-415C-8827-C7CDAD25D2E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_2DShooter", "_2DShooter\_2DShooter.csproj", "{3CA83C4B-1106-415C-8827-C7CDAD25D2E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_2DShooterContent", "..\..\..\..\Projects\TeamAllusah\2DShooter\_2DShooterContent\_2DShooterContent.contentproj", "{B81B824F-9857-42F6-AAD5-F47FBE511AE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_2DShooterContent", "_2DShooterContent\_2DShooterContent.contentproj", "{B81B824F-9857-42F6-AAD5-F47FBE511AE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
