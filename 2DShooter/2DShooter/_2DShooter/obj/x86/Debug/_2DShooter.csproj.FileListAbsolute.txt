@@ -1,0 +1,8 @@
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid_0.xnb
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\_2DShooter.exe
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\_2DShooter.pdb
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.csprojResolveAssemblyReference.cache
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.exe
+D:\vsworkspace\TeamAllusah\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.pdb
