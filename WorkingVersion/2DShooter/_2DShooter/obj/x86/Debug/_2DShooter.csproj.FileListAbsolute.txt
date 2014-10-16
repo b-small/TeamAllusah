@@ -1,0 +1,9 @@
+c:\users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb
+c:\users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\_2DShooter.exe
+c:\users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\_2DShooter.pdb
+c:\users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.csprojResolveAssemblyReference.cache
+c:\users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.exe
+c:\users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.pdb
+C:\Users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb
+C:\Users\xeruvim\Documents\Visual Studio 2013\Projects\2DShooter\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb
