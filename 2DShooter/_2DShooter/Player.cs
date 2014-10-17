@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,12 +13,12 @@ namespace _2DShooter
     class Player
     {
 
-        public Texture2D texture, bulletTexture;
-        public Vector2 position;
-        public int speed;
+        public Texture2D texture, bulletTexture, healthTexture;
+        public Vector2 position, healthBarPosition;
+        public int speed, health;
         public float bulletDelay;
         public bool isColliding;
-        public Rectangle boundingBox;
+        public Rectangle boundingBox, healthRectangle;
         public List<Bullet> bulletList;
 
         public Player()
@@ -29,6 +29,8 @@ namespace _2DShooter
             bulletDelay = 20;
             speed = 10;
             isColliding = false;
+            health = 200;
+            healthBarPosition = new Vector2(50, 50);
         }
 
         // load content
@@ -36,13 +38,15 @@ namespace _2DShooter
         {
             texture = Content.Load<Texture2D>("ship");
             bulletTexture = Content.Load<Texture2D>("playerbullet");
-
+            healthTexture = Content.Load<Texture2D>("healthbar");
         }
 
         // draw 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.Draw(healthTexture, healthRectangle, Color.White);
+
             foreach (Bullet b in bulletList)
             {
                 b.Draw(spriteBatch);
@@ -56,6 +60,7 @@ namespace _2DShooter
             KeyboardState keyState = Keyboard.GetState();
 
             boundingBox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+            healthRectangle = new Rectangle((int)healthBarPosition.X, (int)healthBarPosition.Y, health, 25);
 
             // fire Bullets
             if (keyState.IsKeyDown(Keys.Space))

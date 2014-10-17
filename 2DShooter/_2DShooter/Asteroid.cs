@@ -56,10 +56,10 @@ namespace _2DShooter
                 position.Y = -50;
             }
 
-            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            rotationAngle += elapsed;
-            float circle = MathHelper.Pi * 2;
-            rotationAngle = rotationAngle % circle;
+            //float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //rotationAngle += elapsed;
+            //float circle = MathHelper.Pi * 2;
+            //rotationAngle = rotationAngle % circle;
 
         }
 
@@ -67,7 +67,7 @@ namespace _2DShooter
         {
             if (isVisible)
             {
-                spriteBatch.Draw(texture, position, null, Color.White, rotationAngle, origin, 1.0f, SpriteEffects.None, 0f);
+                spriteBatch.Draw(texture, position, Color.White);
             }
         }
 

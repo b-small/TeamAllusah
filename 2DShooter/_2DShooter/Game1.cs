@@ -88,6 +88,7 @@ namespace _2DShooter
             {
                 if(a.boundingBox.Intersects(p.boundingBox))
                 {
+                    p.health -= 20;
                     a.isVisible = false;
                 }
 
