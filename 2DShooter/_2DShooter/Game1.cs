@@ -18,9 +18,13 @@ namespace _2DShooter
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Random random = new Random();
+
+        List<Asteroid> asteroidList = new List<Asteroid>();
+        
         Player p = new Player();
         Starfield sf = new Starfield();
-        Asteroid asteroid = new Asteroid();
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);            
@@ -56,8 +60,6 @@ namespace _2DShooter
             spriteBatch = new SpriteBatch(GraphicsDevice);
             p.LoadContent(Content);
             sf.LoadContent(Content);
-            asteroid.LoadContent(Content);
-            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -78,14 +80,17 @@ namespace _2DShooter
         /// Update
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
-            asteroid.Update(gameTime);
+            foreach (Asteroid a in asteroidList)
+            {
+                a.Update(gameTime);
+            }
+ 
             p.Update(gameTime);
             sf.Update(gameTime);
+            LoadAsteroids();
 
             base.Update(gameTime);
             
@@ -99,17 +104,38 @@ namespace _2DShooter
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
             spriteBatch.Begin();
+
             sf.Draw(spriteBatch);
-            asteroid.Draw(spriteBatch);
             p.Draw(spriteBatch);
+
+            foreach (Asteroid a in asteroidList)
+            {
+                a.Draw(spriteBatch);
+            } 
+           
             spriteBatch.End();
-
-
             base.Draw(gameTime);
+        }
 
+        public void LoadAsteroids()
+        {
+            int randY = random.Next(-600, -50);
+            int randX = random.Next(0, 750);
+
+            if (asteroidList.Count < 5)
+            {
+                asteroidList.Add(new Asteroid(Content.Load<Texture2D>("asteroid"), new Vector2(randX, randY)));
+            }
+
+            for (int i = 0; i < asteroidList.Count; i++)
+            {
+                if (!asteroidList[i].isVisible)
+                {
+                    asteroidList.RemoveAt(i);
+                    i--;
+                }
+            }
         }
     }
 }
