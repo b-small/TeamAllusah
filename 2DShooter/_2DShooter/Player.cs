@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +26,7 @@ namespace _2DShooter
             bulletList = new List<Bullet>();
             texture = null;
             position = new Vector2(300, 300);
-            bulletDelay = 5;
+            bulletDelay = 20;
             speed = 10;
             isColliding = false;
         }
@@ -52,7 +52,10 @@ namespace _2DShooter
         // update
         public void Update(GameTime gameTime)
         {
-            KeyboardState keyState = Keyboard.GetState(); // read the keyboard every frame
+            // read the keyboard every frame
+            KeyboardState keyState = Keyboard.GetState();
+
+            boundingBox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
 
             // fire Bullets
             if (keyState.IsKeyDown(Keys.Space))
@@ -127,7 +130,7 @@ namespace _2DShooter
 
             if (bulletDelay == 0)
             {
-                bulletDelay = 5;
+                bulletDelay = 20;
             }            
         }
 
@@ -135,9 +138,10 @@ namespace _2DShooter
         {
             foreach (Bullet b in bulletList)
             {
+                b.boundingBox = new Rectangle((int)b.position.X, (int)b.position.X, b.texture.Width, b.texture.Height);
                 b.position.Y = b.position.Y - b.speed;
 
-                // if bullet hits the top of screen make i t invisible
+                // if bullet hits the top of screen make it invisible
                 if (b.position.Y <= 0)
                 {
                     b.isVisible = false;

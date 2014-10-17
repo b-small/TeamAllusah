@@ -83,8 +83,24 @@ namespace _2DShooter
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            //update&check asteroids for collision
             foreach (Asteroid a in asteroidList)
             {
+                if(a.boundingBox.Intersects(p.boundingBox))
+                {
+                    a.isVisible = false;
+                }
+
+                //iterate through the bulletList and check for collision
+                for (int i = 0; i < p.bulletList.Count; i++)
+                {
+                    if (a.boundingBox.Intersects(p.bulletList[i].boundingBox))
+                    {
+                        a.isVisible = false;
+                        p.bulletList.ElementAt(i).isVisible = false;
+                    }
+                }
+
                 a.Update(gameTime);
             }
  
