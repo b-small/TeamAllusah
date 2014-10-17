@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
       <Time>2014-10-09T00:37:30.1356562+03:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb</Output>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb</Output>
       <Time>2014-10-16T00:19:06.7122573+03:00</Time>
     </Item>
     <Item>
@@ -25,8 +25,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb</Output>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb</Output>
       <Time>2014-10-16T02:30:25.7894368+03:00</Time>
+    </Item>
+    <Item>
+      <Source>playerbullet.png</Source>
+      <Name>playerbullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerbullet.xnb</Output>
+      <Time>2014-10-16T18:41:03.8930623+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -35,10 +44,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooterContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooterContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
