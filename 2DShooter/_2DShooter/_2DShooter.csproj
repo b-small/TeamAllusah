@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Starfield.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,12 +86,6 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\_2DShooterContent\_2DShooterContent.contentproj">
-      <Name>_2DShooterContent</Name>
-      <XnaReferenceType>Content</XnaReferenceType>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

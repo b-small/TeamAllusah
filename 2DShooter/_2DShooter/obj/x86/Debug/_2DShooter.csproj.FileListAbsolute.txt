@@ -16,14 +16,9 @@ C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\obj\x8
 C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.exe
 C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.pdb
-C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb
-C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb
-C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\_2DShooter.exe
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\_2DShooter.pdb
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.csprojResolveAssemblyReference.cache
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.exe
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.pdb
-C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerbullet.xnb
-C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\healthbar.xnb
