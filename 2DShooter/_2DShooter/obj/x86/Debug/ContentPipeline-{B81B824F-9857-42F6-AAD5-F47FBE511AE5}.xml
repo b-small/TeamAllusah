@@ -37,6 +37,15 @@
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerbullet.xnb</Output>
       <Time>2014-10-16T18:41:03.8930623+03:00</Time>
     </Item>
+    <Item>
+      <Source>healthbar.png</Source>
+      <Name>healthbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\healthbar.xnb</Output>
+      <Time>2014-10-18T00:36:23.5586204+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{B81B824F-9857-42F6-AAD5-F47FBE511AE5}</ContentProjectGUID>
