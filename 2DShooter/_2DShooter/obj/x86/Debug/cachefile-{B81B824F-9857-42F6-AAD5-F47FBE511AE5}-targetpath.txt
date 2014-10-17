@@ -1,0 +1,4 @@
+Content\ship.xnb
+Content\space.xnb
+Content\asteroid.xnb
+Content\playerbullet.xnb
