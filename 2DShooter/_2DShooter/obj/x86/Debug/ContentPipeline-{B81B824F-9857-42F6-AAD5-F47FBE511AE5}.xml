@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
-      <Time>2014-10-09T00:37:30.1356562+03:00</Time>
+      <Time>2014-10-18T01:13:33.2551129+03:00</Time>
     </Item>
     <Item>
       <Source>space.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb</Output>
-      <Time>2014-10-16T00:19:06.7122573+03:00</Time>
+      <Time>2014-10-18T01:13:33.3021158+03:00</Time>
     </Item>
     <Item>
       <Source>asteroid.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb</Output>
-      <Time>2014-10-16T02:30:25.7894368+03:00</Time>
+      <Time>2014-10-18T01:13:33.1351044+03:00</Time>
     </Item>
     <Item>
       <Source>playerbullet.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerbullet.xnb</Output>
-      <Time>2014-10-16T18:41:03.8930623+03:00</Time>
+      <Time>2014-10-18T01:13:33.2271098+03:00</Time>
     </Item>
     <Item>
       <Source>healthbar.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\healthbar.xnb</Output>
-      <Time>2014-10-18T00:36:23.5586204+03:00</Time>
+      <Time>2014-10-18T01:13:33.1481049+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
