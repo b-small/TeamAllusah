@@ -38,16 +38,16 @@ namespace _2DShooter
 
         public void LoadContent(ContentManager Content)
         {
-            texture = Content.Load<Texture2D>("asteroid");
-            
-            //finding the center of our origin sprite
-            origin.X = texture.Width / 2;
-            origin.Y = texture.Height / 2;
+       
         }
 
         public void Update(GameTime gameTime) //gt
         {
             boundingBox = new Rectangle((int)position.X, (int)position.Y, 45, 45); // 45,45
+
+            //finding the center of our origin sprite
+            origin.X = texture.Width / 2;
+            origin.Y = texture.Height / 2;
 
             position.Y = position.Y + speed;
 
