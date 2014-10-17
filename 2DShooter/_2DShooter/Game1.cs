@@ -19,41 +19,34 @@ namespace _2DShooter
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Random random = new Random();
+        public int enemyBulletDamage;
 
         List<Asteroid> asteroidList = new List<Asteroid>();
-        
+        List<Enemy> enemyList = new List<Enemy>();
+
         Player p = new Player();
         Starfield sf = new Starfield();
 
         public Game1()
         {
-            graphics = new GraphicsDeviceManager(this);            
-            graphics.IsFullScreen = false; // want the screen to be full?
-            graphics.PreferredBackBufferWidth = 800; // the width of the screen
+            graphics = new GraphicsDeviceManager(this);
+
+            // want the screen to be full?
+            graphics.IsFullScreen = false;
+
+            // the width of the screen
+            graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 750;
             this.Window.Title = "Our 2D Shooter Game";
             Content.RootDirectory = "Content";
+            enemyBulletDamage = 10;
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
-        /// initialize
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
-        /// Load Content
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -62,31 +55,50 @@ namespace _2DShooter
             sf.LoadContent(Content);
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
-        /// Unload Content
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        /// Update
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            foreach (Enemy e in enemyList)
+            {
+                if (e.boundingBox.Intersects(p.boundingBox))
+                {
+                    p.health -= 40;
+                    e.isVisible = false;
+                }
+
+                //bullet collision
+                for (int i = 0; i < e.bulletList.Count; i++)
+                {
+                    if (p.boundingBox.Intersects(e.bulletList[i].boundingBox))
+                    {
+                        p.health -= enemyBulletDamage;
+                        e.bulletList[i].isVisible = false;
+                    }
+                }
+
+                for (int i = 0; i < p.bulletList.Count; i++)
+                {
+                    if (p.bulletList[i].boundingBox.Intersects(e.boundingBox))
+                    {
+                        p.bulletList[i].isVisible = false;
+                        e.isVisible = false;
+                    }
+                }
+
+                e.Update(gameTime);
+            }
+
             //update&check asteroids for collision
             foreach (Asteroid a in asteroidList)
             {
-                if(a.boundingBox.Intersects(p.boundingBox))
+                if (a.boundingBox.Intersects(p.boundingBox))
                 {
                     p.health -= 20;
                     a.isVisible = false;
@@ -104,20 +116,17 @@ namespace _2DShooter
 
                 a.Update(gameTime);
             }
- 
+
             p.Update(gameTime);
             sf.Update(gameTime);
+
             LoadAsteroids();
+            LoadEnemies();
 
             base.Update(gameTime);
-            
+
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        // Draw
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -129,8 +138,13 @@ namespace _2DShooter
             foreach (Asteroid a in asteroidList)
             {
                 a.Draw(spriteBatch);
-            } 
-           
+            }
+
+            foreach (Enemy e in enemyList)
+            {
+                e.Draw(spriteBatch);
+            }
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -150,6 +164,26 @@ namespace _2DShooter
                 if (!asteroidList[i].isVisible)
                 {
                     asteroidList.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        public void LoadEnemies()
+        {
+            int randY = random.Next(-600, -50);
+            int randX = random.Next(0, 750);
+
+            if (enemyList.Count < 3)
+            {
+                enemyList.Add(new Enemy(Content.Load<Texture2D>("enemyship"), new Vector2(randX, randY), Content.Load<Texture2D>("EnemyBullet")));
+            }
+
+            for (int i = 0; i < enemyList.Count; i++)
+            {
+                if (!enemyList[i].isVisible)
+                {
+                    enemyList.RemoveAt(i);
                     i--;
                 }
             }
