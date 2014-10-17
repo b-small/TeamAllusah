@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,23 +19,27 @@ namespace _2DShooter
         public Rectangle boundingBox;
         public float rotationAngle; // rotation of the sprite
         public int speed;
-        public bool isColliding, destroyed;
-        //public bool isDestroyed;
 
 
-        public Asteroid()
+        public bool isVisible;
+        Random random = new Random();
+        public float randX, randY;
+
+        public Asteroid(Texture2D newTexture, Vector2 newPosition)
         {
-            position = new Vector2(400, -50);
-            texture = null;
+            position = newPosition;
+            texture = newTexture;
             speed = 4;
-            isColliding = false;
-            destroyed = false;
+            isVisible = true;
+            randX = random.Next(0, 750);
+            randY = random.Next(-600, -50);
         }
 
 
         public void LoadContent(ContentManager Content)
         {
             texture = Content.Load<Texture2D>("asteroid");
+            
             //finding the center of our origin sprite
             origin.X = texture.Width / 2;
             origin.Y = texture.Height / 2;
@@ -61,7 +65,7 @@ namespace _2DShooter
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!destroyed)
+            if (isVisible)
             {
                 spriteBatch.Draw(texture, position, null, Color.White, rotationAngle, origin, 1.0f, SpriteEffects.None, 0f);
             }
