@@ -24,6 +24,7 @@ namespace _2DShooter
 
         List<Asteroid> asteroidList = new List<Asteroid>();
         List<Enemy> enemyList = new List<Enemy>();
+        List<Explosion> explosionList = new List<Explosion>();
 
         Player p = new Player();
         Starfield sf = new Starfield();
@@ -60,7 +61,6 @@ namespace _2DShooter
 
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
         }
 
         protected override void Update(GameTime gameTime)
@@ -90,6 +90,7 @@ namespace _2DShooter
                 {
                     if (p.bulletList[i].boundingBox.Intersects(e.boundingBox))
                     {
+                        explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(e.position.X, e.position.Y)));
                         hud.playerScore += 20;
                         p.bulletList[i].isVisible = false;
                         e.isVisible = false;
@@ -97,6 +98,11 @@ namespace _2DShooter
                 }
 
                 e.Update(gameTime);
+            }
+
+            foreach (Explosion ex in explosionList)
+            {
+                ex.Update(gameTime);
             }
 
             //update&check asteroids for collision
@@ -113,6 +119,7 @@ namespace _2DShooter
                 {
                     if (a.boundingBox.Intersects(p.bulletList[i].boundingBox))
                     {
+                        explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(a.position.X, a.position.Y)));
                         hud.playerScore += 5;
                         a.isVisible = false;
                         p.bulletList.ElementAt(i).isVisible = false;
@@ -125,7 +132,7 @@ namespace _2DShooter
             hud.Update(gameTime);
             p.Update(gameTime);
             sf.Update(gameTime);
-
+            ManageExplosions();
             LoadAsteroids();
             LoadEnemies();
 
@@ -140,6 +147,11 @@ namespace _2DShooter
 
             sf.Draw(spriteBatch);
             p.Draw(spriteBatch);
+
+            foreach (Explosion ex in explosionList)
+            {
+                ex.Draw(spriteBatch);
+            }
 
             foreach (Asteroid a in asteroidList)
             {
@@ -192,6 +204,18 @@ namespace _2DShooter
                 if (!enemyList[i].isVisible)
                 {
                     enemyList.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        public void ManageExplosions()
+        {
+            for (int i = 0; i < explosionList.Count; i++)
+            {
+                if (!explosionList[i].isVisible)
+                {
+                    explosionList.RemoveAt(i);
                     i--;
                 }
             }
