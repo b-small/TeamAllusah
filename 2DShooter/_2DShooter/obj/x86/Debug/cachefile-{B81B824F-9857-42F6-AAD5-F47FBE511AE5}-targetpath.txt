@@ -3,3 +3,5 @@ Content\space.xnb
 Content\asteroid.xnb
 Content\playerbullet.xnb
 Content\healthbar.xnb
+Content\enemyship.xnb
+Content\EnemyBullet.xnb

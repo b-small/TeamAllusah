@@ -37,7 +37,7 @@ namespace _2DShooter
 
             // the width of the screen
             graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 950;
+            graphics.PreferredBackBufferHeight = 850;
             this.Window.Title = "Our 2D Shooter Game";
             Content.RootDirectory = "Content";
             enemyBulletDamage = 10;

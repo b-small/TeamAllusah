@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
-      <Time>2014-10-09T00:37:30.1356562+03:00</Time>
+      <Time>2014-10-18T03:42:06.2619342+03:00</Time>
     </Item>
     <Item>
       <Source>space.png</Source>
@@ -45,6 +45,24 @@
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\healthbar.xnb</Output>
       <Time>2014-10-18T00:36:23.5586204+03:00</Time>
+    </Item>
+    <Item>
+      <Source>enemyship.png</Source>
+      <Name>enemyship</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyship.xnb</Output>
+      <Time>2014-10-18T02:31:19.3983024+03:00</Time>
+    </Item>
+    <Item>
+      <Source>EnemyBullet.png</Source>
+      <Name>EnemyBullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\EnemyBullet.xnb</Output>
+      <Time>2014-10-18T03:55:02.8890238+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
