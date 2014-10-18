@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +26,7 @@ namespace _2DShooter
         {
             bulletList = new List<Bullet>();
             texture = null;
-            position = new Vector2(300, 300);
+            position = new Vector2(400, 900);
             bulletDelay = 20;
             speed = 10;
             isColliding = false;
@@ -139,7 +139,7 @@ namespace _2DShooter
             if (bulletDelay == 0)
             {
                 bulletDelay = 10;
-            }            
+            }
         }
 
         public void UpdateBullets()
