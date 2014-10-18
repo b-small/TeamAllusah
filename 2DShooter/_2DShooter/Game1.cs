@@ -122,7 +122,7 @@ namespace _2DShooter
                 a.Update(gameTime);
             }
 
-          //  hud.Update(gameTime);
+            hud.Update(gameTime);
             p.Update(gameTime);
             sf.Update(gameTime);
 
