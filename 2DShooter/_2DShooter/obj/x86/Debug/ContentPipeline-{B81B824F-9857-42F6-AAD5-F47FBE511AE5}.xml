@@ -64,6 +64,15 @@
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\EnemyBullet.xnb</Output>
       <Time>2014-10-18T03:55:02.8890238+03:00</Time>
     </Item>
+    <Item>
+      <Source>georgia.spritefont</Source>
+      <Name>georgia</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\georgia.xnb</Output>
+      <Time>2014-10-18T04:12:06.4017788+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{B81B824F-9857-42F6-AAD5-F47FBE511AE5}</ContentProjectGUID>
