@@ -17,10 +17,18 @@ namespace _2DShooter
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public enum State
+        {
+            Menu,
+            Playing,
+            Gameover
+        }
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Random random = new Random();
         public int enemyBulletDamage;
+        public Texture2D menuImage;
 
         List<Asteroid> asteroidList = new List<Asteroid>();
         List<Enemy> enemyList = new List<Enemy>();
@@ -30,6 +38,8 @@ namespace _2DShooter
         Starfield sf = new Starfield();
         HUD hud = new HUD();
         SoundManager sm = new SoundManager();
+
+        State gameState = State.Menu;
 
         public Game1()
         {
@@ -44,6 +54,7 @@ namespace _2DShooter
             this.Window.Title = "Our 2D Shooter Game";
             Content.RootDirectory = "Content";
             enemyBulletDamage = 10;
+            menuImage = null;
         }
 
         protected override void Initialize()
@@ -59,7 +70,7 @@ namespace _2DShooter
             sf.LoadContent(Content);
             hud.LoadContent(Content);
             sm.LoadContent(Content);
-            MediaPlayer.Play(sm.bgMusic);
+            menuImage = Content.Load<Texture2D>("menuImage");
         }
 
         protected override void UnloadContent()
@@ -71,75 +82,106 @@ namespace _2DShooter
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            foreach (Enemy e in enemyList)
+            switch (gameState)
             {
-                if (e.boundingBox.Intersects(p.boundingBox))
-                {
-                    p.health -= 40;
-                    e.isVisible = false;
-                }
-
-                //bullet collision
-                for (int i = 0; i < e.bulletList.Count; i++)
-                {
-                    if (p.boundingBox.Intersects(e.bulletList[i].boundingBox))
+                case State.Playing:
                     {
-                        p.health -= enemyBulletDamage;
-                        e.bulletList[i].isVisible = false;
-                    }
-                }
+                        sf.speed = 5;
 
-                for (int i = 0; i < p.bulletList.Count; i++)
-                {
-                    if (p.bulletList[i].boundingBox.Intersects(e.boundingBox))
+                        foreach (Enemy e in enemyList)
+                        {
+                            if (e.boundingBox.Intersects(p.boundingBox))
+                            {
+                                p.health -= 40;
+                                e.isVisible = false;
+                            }
+
+                            //bullet collision
+                            for (int i = 0; i < e.bulletList.Count; i++)
+                            {
+                                if (p.boundingBox.Intersects(e.bulletList[i].boundingBox))
+                                {
+                                    p.health -= enemyBulletDamage;
+                                    e.bulletList[i].isVisible = false;
+                                }
+                            }
+
+                            for (int i = 0; i < p.bulletList.Count; i++)
+                            {
+                                if (p.bulletList[i].boundingBox.Intersects(e.boundingBox))
+                                {
+                                    sm.explodeSound.Play();
+                                    explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(e.position.X, e.position.Y)));
+                                    hud.playerScore += 20;
+                                    p.bulletList[i].isVisible = false;
+                                    e.isVisible = false;
+                                }
+                            }
+
+                            e.Update(gameTime);
+                        }
+
+                        foreach (Explosion ex in explosionList)
+                        {
+                            ex.Update(gameTime);
+                        }
+
+                        //update&check asteroids for collision
+                        foreach (Asteroid a in asteroidList)
+                        {
+                            if (a.boundingBox.Intersects(p.boundingBox))
+                            {
+                                p.health -= 20;
+                                a.isVisible = false;
+                            }
+
+                            //iterate through the bulletList and check for collision
+                            for (int i = 0; i < p.bulletList.Count; i++)
+                            {
+                                if (a.boundingBox.Intersects(p.bulletList[i].boundingBox))
+                                {
+                                    sm.explodeSound.Play();
+                                    explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(a.position.X, a.position.Y)));
+                                    hud.playerScore += 5;
+                                    a.isVisible = false;
+                                    p.bulletList.ElementAt(i).isVisible = false;
+                                }
+                            }
+
+                            a.Update(gameTime);
+                        }
+
+                        hud.Update(gameTime);
+                        p.Update(gameTime);
+                        sf.Update(gameTime);
+                        ManageExplosions();
+                        LoadAsteroids();
+                        LoadEnemies();
+                        break;
+                    }
+
+                case State.Menu:
                     {
-                        sm.explodeSound.Play();
-                        explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(e.position.X, e.position.Y)));
-                        hud.playerScore += 20;
-                        p.bulletList[i].isVisible = false;
-                        e.isVisible = false;
+                        KeyboardState keyState = Keyboard.GetState();
+
+                        if (keyState.IsKeyDown(Keys.Enter))
+                        {
+                            gameState = State.Playing;
+                            MediaPlayer.Play(sm.bgMusic);
+                        }
+
+                        sf.Update(gameTime);
+                        sf.speed = 1;
+                        break;
                     }
-                }
 
-                e.Update(gameTime);
-            }
-
-            foreach (Explosion ex in explosionList)
-            {
-                ex.Update(gameTime);
-            }
-
-            //update&check asteroids for collision
-            foreach (Asteroid a in asteroidList)
-            {
-                if (a.boundingBox.Intersects(p.boundingBox))
-                {
-                    p.health -= 20;
-                    a.isVisible = false;
-                }
-
-                //iterate through the bulletList and check for collision
-                for (int i = 0; i < p.bulletList.Count; i++)
-                {
-                    if (a.boundingBox.Intersects(p.bulletList[i].boundingBox))
+                case State.Gameover:
                     {
-                        sm.explodeSound.Play();
-                        explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(a.position.X, a.position.Y)));
-                        hud.playerScore += 5;
-                        a.isVisible = false;
-                        p.bulletList.ElementAt(i).isVisible = false;
+                        break;
                     }
-                }
 
-                a.Update(gameTime);
+                default: break;
             }
-
-            hud.Update(gameTime);
-            p.Update(gameTime);
-            sf.Update(gameTime);
-            ManageExplosions();
-            LoadAsteroids();
-            LoadEnemies();
 
             base.Update(gameTime);
 
@@ -150,25 +192,49 @@ namespace _2DShooter
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
-            sf.Draw(spriteBatch);
-            p.Draw(spriteBatch);
-
-            foreach (Explosion ex in explosionList)
+            switch(gameState)
             {
-                ex.Draw(spriteBatch);
+                case State.Playing:
+                    {
+                        sf.Draw(spriteBatch);
+                        p.Draw(spriteBatch);
+                        
+                        foreach (Explosion ex in explosionList)
+                        {
+                            ex.Draw(spriteBatch);
+                        }
+
+                        foreach (Asteroid a in asteroidList)
+                        {
+                            a.Draw(spriteBatch);
+                        }
+
+                        foreach (Enemy e in enemyList)
+                        {
+                            e.Draw(spriteBatch);
+                        }
+
+                        hud.Draw(spriteBatch);
+
+                        break;
+                    }
+
+                case State.Menu:
+                    {
+                        sf.Draw(spriteBatch);
+                        spriteBatch.Draw(menuImage, new Vector2(0, 0), Color.White);
+                        break;
+                    }
+
+                case State.Gameover:
+                    {
+                        break;
+                    }
             }
 
-            foreach (Asteroid a in asteroidList)
-            {
-                a.Draw(spriteBatch);
-            }
+            
 
-            foreach (Enemy e in enemyList)
-            {
-                e.Draw(spriteBatch);
-            }
-
-            hud.Draw(spriteBatch);
+            
             spriteBatch.End();
 
             base.Draw(gameTime);

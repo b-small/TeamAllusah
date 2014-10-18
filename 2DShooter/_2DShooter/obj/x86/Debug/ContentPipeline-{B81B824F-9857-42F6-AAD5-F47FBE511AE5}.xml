@@ -110,6 +110,15 @@
       <Extra>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.wma</Extra>
       <Time>2014-10-18T20:23:16.684696+03:00</Time>
     </Item>
+    <Item>
+      <Source>menuImage.png</Source>
+      <Name>menuImage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\menuImage.xnb</Output>
+      <Time>2014-10-18T21:06:17.2563316+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{B81B824F-9857-42F6-AAD5-F47FBE511AE5}</ContentProjectGUID>

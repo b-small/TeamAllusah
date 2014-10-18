@@ -11,3 +11,4 @@ Content\playershoot.xnb
 Content\explode.xnb
 Content\theme.xnb
 Content\theme.wma
+Content\menuImage.xnb

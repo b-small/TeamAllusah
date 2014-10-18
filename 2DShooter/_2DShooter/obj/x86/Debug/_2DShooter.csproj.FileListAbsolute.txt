@@ -35,3 +35,4 @@ C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explode.xnb
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.xnb
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.wma
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\menuImage.xnb
