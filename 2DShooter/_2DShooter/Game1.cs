@@ -27,6 +27,7 @@ namespace _2DShooter
 
         Player p = new Player();
         Starfield sf = new Starfield();
+        HUD hud = new HUD();
 
         public Game1()
         {
@@ -54,6 +55,7 @@ namespace _2DShooter
             spriteBatch = new SpriteBatch(GraphicsDevice);
             p.LoadContent(Content);
             sf.LoadContent(Content);
+            hud.LoadContent(Content);
         }
 
         protected override void UnloadContent()
@@ -88,6 +90,7 @@ namespace _2DShooter
                 {
                     if (p.bulletList[i].boundingBox.Intersects(e.boundingBox))
                     {
+                        hud.playerScore += 20;
                         p.bulletList[i].isVisible = false;
                         e.isVisible = false;
                     }
@@ -110,6 +113,7 @@ namespace _2DShooter
                 {
                     if (a.boundingBox.Intersects(p.bulletList[i].boundingBox))
                     {
+                        hud.playerScore += 5;
                         a.isVisible = false;
                         p.bulletList.ElementAt(i).isVisible = false;
                     }
@@ -118,6 +122,7 @@ namespace _2DShooter
                 a.Update(gameTime);
             }
 
+          //  hud.Update(gameTime);
             p.Update(gameTime);
             sf.Update(gameTime);
 
@@ -146,7 +151,9 @@ namespace _2DShooter
                 e.Draw(spriteBatch);
             }
 
+            hud.Draw(spriteBatch);
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
 
