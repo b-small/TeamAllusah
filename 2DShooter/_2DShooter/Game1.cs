@@ -29,6 +29,7 @@ namespace _2DShooter
         Player p = new Player();
         Starfield sf = new Starfield();
         HUD hud = new HUD();
+        SoundManager sm = new SoundManager();
 
         public Game1()
         {
@@ -57,6 +58,8 @@ namespace _2DShooter
             p.LoadContent(Content);
             sf.LoadContent(Content);
             hud.LoadContent(Content);
+            sm.LoadContent(Content);
+            MediaPlayer.Play(sm.bgMusic);
         }
 
         protected override void UnloadContent()
@@ -90,6 +93,7 @@ namespace _2DShooter
                 {
                     if (p.bulletList[i].boundingBox.Intersects(e.boundingBox))
                     {
+                        sm.explodeSound.Play();
                         explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(e.position.X, e.position.Y)));
                         hud.playerScore += 20;
                         p.bulletList[i].isVisible = false;
@@ -119,6 +123,7 @@ namespace _2DShooter
                 {
                     if (a.boundingBox.Intersects(p.bulletList[i].boundingBox))
                     {
+                        sm.explodeSound.Play();
                         explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(a.position.X, a.position.Y)));
                         hud.playerScore += 5;
                         a.isVisible = false;

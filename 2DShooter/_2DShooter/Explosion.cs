@@ -26,8 +26,8 @@ namespace _2DShooter
             timer = 0f;
             interval = 20f;
             currentFrame = 1;
-            spriteWidth = 64;
-            spriteHeight = 64;
+            spriteWidth = 100;
+            spriteHeight = 100;
             isVisible = true;
         }
 

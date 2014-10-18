@@ -20,6 +20,7 @@ namespace _2DShooter
         public bool isColliding;
         public Rectangle boundingBox, healthRectangle;
         public List<Bullet> bulletList;
+        SoundManager sm = new SoundManager();
 
         public Player()
         {
@@ -39,6 +40,7 @@ namespace _2DShooter
             texture = Content.Load<Texture2D>("ship");
             bulletTexture = Content.Load<Texture2D>("playerbullet");
             healthTexture = Content.Load<Texture2D>("healthbar");
+            sm.LoadContent(Content);
         }
 
         // draw 
@@ -121,6 +123,7 @@ namespace _2DShooter
 
             if (bulletDelay <= 0)
             {
+                sm.playerShootSound.Play();
                 Bullet newBullet = new Bullet(bulletTexture);
                 newBullet.position = new Vector2(position.X + 32 - newBullet.texture.Width / 2,
                                                  position.Y + 30);
@@ -135,7 +138,7 @@ namespace _2DShooter
 
             if (bulletDelay == 0)
             {
-                bulletDelay = 20;
+                bulletDelay = 10;
             }            
         }
 

@@ -82,6 +82,34 @@
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explosion3.xnb</Output>
       <Time>2014-10-18T19:14:38.6904811+03:00</Time>
     </Item>
+    <Item>
+      <Source>playershoot.wav</Source>
+      <Name>playershoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playershoot.xnb</Output>
+      <Time>2014-10-18T20:19:02.7670768+03:00</Time>
+    </Item>
+    <Item>
+      <Source>explode.wav</Source>
+      <Name>explode</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explode.xnb</Output>
+      <Time>2014-10-18T20:22:49.3222207+03:00</Time>
+    </Item>
+    <Item>
+      <Source>theme.mp3</Source>
+      <Name>theme</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.xnb</Output>
+      <Extra>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.wma</Extra>
+      <Time>2014-10-18T20:23:16.684696+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{B81B824F-9857-42F6-AAD5-F47FBE511AE5}</ContentProjectGUID>
