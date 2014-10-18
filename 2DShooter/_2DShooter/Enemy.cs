@@ -27,6 +27,8 @@ namespace _2DShooter
             position = newPosition;
             currentDifficultyLevel = 1;
             bulletDelay = 40;
+            speed = 5;
+            isVisible = true;
         }
 
         public void Update(GameTime gameTime)
@@ -93,7 +95,7 @@ namespace _2DShooter
 
                 newBullet.isVisible = true;
 
-                if (bulletList.Count < 20)
+                if (bulletList.Count() < 20)
                 {
                     bulletList.Add(newBullet);
                 }

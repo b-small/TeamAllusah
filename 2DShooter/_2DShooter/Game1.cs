@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -36,7 +37,7 @@ namespace _2DShooter
 
             // the width of the screen
             graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 750;
+            graphics.PreferredBackBufferHeight = 950;
             this.Window.Title = "Our 2D Shooter Game";
             Content.RootDirectory = "Content";
             enemyBulletDamage = 10;
@@ -174,7 +175,7 @@ namespace _2DShooter
             int randY = random.Next(-600, -50);
             int randX = random.Next(0, 750);
 
-            if (enemyList.Count < 3)
+            if (enemyList.Count() < 3)
             {
                 enemyList.Add(new Enemy(Content.Load<Texture2D>("enemyship"), new Vector2(randX, randY), Content.Load<Texture2D>("EnemyBullet")));
             }

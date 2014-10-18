@@ -36,7 +36,7 @@ namespace _2DShooter
         // load content
         public void LoadContent(ContentManager Content)
         {
-            texture = Content.Load<Texture2D>("ship");
+            //texture = Content.Load<Texture2D>("ship");
             bulletTexture = Content.Load<Texture2D>("playerbullet");
             healthTexture = Content.Load<Texture2D>("healthbar");
         }
