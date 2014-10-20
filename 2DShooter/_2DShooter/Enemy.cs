@@ -9,57 +9,48 @@ using Microsoft.Xna.Framework.Content;
 
 namespace _2DShooter
 {
-    public class Enemy
+    public class Enemy : GameCharacter
     {
-        public Rectangle boundingBox;
-        public Texture2D texture, bulletTexture;
+
+        public int currentDifficultyLevel;
         public Vector2 position;
-        public int health, speed, bulletDelay, currentDifficultyLevel;
-        public bool isVisible;
-        public List<Bullet> bulletList;
 
         public Enemy(Texture2D newTexture, Vector2 newPosition, Texture2D newBulletTexture)
+            : base(newTexture, newBulletTexture)
         {
-            bulletList = new List<Bullet>();
-            texture = newTexture;
-            bulletTexture = newBulletTexture;
-            health = 5;
             position = newPosition;
             currentDifficultyLevel = 1;
-            bulletDelay = 40;
-            speed = 5;
-            isVisible = true;
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
-            boundingBox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+            BoundingBox = new Rectangle((int)position.X, (int)position.Y, Texture.Width, Texture.Height);
 
-            position.Y += speed;
+            position.Y += Speed;
 
             if (position.Y >= 950)
             {
                 position.Y = -75;
             }
 
-            EnemyShoot();
+            Shoot();
             UpdateBullets();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.Draw(Texture, position, Color.White);
 
-            foreach (Bullet b in bulletList)
+            foreach (Bullet b in BulletList)
             {
                 b.Draw(spriteBatch);
             }
         }
 
 
-        public void UpdateBullets()
+        public override void UpdateBullets()
         {
-            foreach (Bullet b in bulletList)
+            foreach (Bullet b in BulletList)
             {
                 b.boundingBox = new Rectangle((int)b.position.X, (int)b.position.X, b.texture.Width, b.texture.Height);
                 b.position.Y = b.position.Y + b.speed;
@@ -71,40 +62,45 @@ namespace _2DShooter
                 }
             }
 
-            for (int i = 0; i < bulletList.Count; i++)
+            for (int i = 0; i < BulletList.Count; i++)
             {
-                if (!bulletList[i].isVisible)
+                if (!BulletList[i].isVisible)
                 {
-                    bulletList.RemoveAt(i);
+                    BulletList.RemoveAt(i);
                     i--;
                 }
             }
         }
 
-        public void EnemyShoot()
+        public override void Shoot()
         {
-            if (bulletDelay >= 0)
+            if (BulletDelay >= 0)
             {
-                bulletDelay--;
+                BulletDelay--;
             }
 
-            if (bulletDelay <= 0)
+            if (BulletDelay <= 0)
             {
-                Bullet newBullet = new Bullet(bulletTexture);
-                newBullet.position = new Vector2(position.X + texture.Width / 2 - newBullet.texture.Width / 2, position.Y + 30);
+                Bullet newBullet = new Bullet(BulletTexture);
+                newBullet.position = new Vector2(position.X + Texture.Width / 2 - newBullet.texture.Width / 2, position.Y + 30);
 
                 newBullet.isVisible = true;
 
-                if (bulletList.Count() < 20)
+                if (BulletList.Count() < 20)
                 {
-                    bulletList.Add(newBullet);
+                    BulletList.Add(newBullet);
                 }
             }
 
-            if (bulletDelay == 0)
+            if (BulletDelay == 0)
             {
-                bulletDelay = 40;
+                BulletDelay = 40;
             }
+        }
+
+        public override void LoadContent(ContentManager Content)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace _2DShooter
         {
             playerShootSound = Content.Load<SoundEffect>("playershoot");
             explodeSound = Content.Load<SoundEffect>("explode");
-            bgMusic = Content.Load<Song>("theme");
+            bgMusic = Content.Load<Song>("00");
         }
 
     }

@@ -1,3 +1,5 @@
 C:\Users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
 C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\xeruvim\Desktop\testGame\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache

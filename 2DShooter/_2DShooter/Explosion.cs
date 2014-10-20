@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace _2DShooter
 {
-    public class Explosion
+    public class Explosion : IDrawable
     {
         public Texture2D texture;
         public Vector2 position;
@@ -26,8 +26,8 @@ namespace _2DShooter
             timer = 0f;
             interval = 20f;
             currentFrame = 1;
-            spriteWidth = 100;
-            spriteHeight = 100;
+            spriteWidth = 80;
+            spriteHeight = 120;
             isVisible = true;
         }
 
@@ -44,7 +44,7 @@ namespace _2DShooter
             {
                 currentFrame++;
                 //reset timer
-                timer = 0f;
+                //timer = 0f;
             }
 
             //we're on the last frame
@@ -52,6 +52,7 @@ namespace _2DShooter
             {
                 isVisible = false;
                 currentFrame = 0;
+                timer = 0f;
             }
 
             sourceRect = new Rectangle(currentFrame * spriteWidth, 0, spriteWidth, spriteHeight);

@@ -2,22 +2,13 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>ship.png</Source>
-      <Name>ship</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
-      <Time>2014-10-18T03:42:06.2619342+03:00</Time>
-    </Item>
-    <Item>
       <Source>space.png</Source>
       <Name>space</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb</Output>
-      <Time>2014-10-16T00:19:06.7122573+03:00</Time>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>asteroid.png</Source>
@@ -26,16 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb</Output>
-      <Time>2014-10-16T02:30:25.7894368+03:00</Time>
-    </Item>
-    <Item>
-      <Source>playerbullet.png</Source>
-      <Name>playerbullet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerbullet.xnb</Output>
-      <Time>2014-10-16T18:41:03.8930623+03:00</Time>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>healthbar.png</Source>
@@ -44,34 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\healthbar.xnb</Output>
-      <Time>2014-10-18T00:36:23.5586204+03:00</Time>
-    </Item>
-    <Item>
-      <Source>enemyship.png</Source>
-      <Name>enemyship</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyship.xnb</Output>
-      <Time>2014-10-18T02:31:19.3983024+03:00</Time>
-    </Item>
-    <Item>
-      <Source>EnemyBullet.png</Source>
-      <Name>EnemyBullet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\EnemyBullet.xnb</Output>
-      <Time>2014-10-18T03:55:02.8890238+03:00</Time>
-    </Item>
-    <Item>
-      <Source>georgia.spritefont</Source>
-      <Name>georgia</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\georgia.xnb</Output>
-      <Time>2014-10-18T04:12:06.4017788+03:00</Time>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>explosion3.png</Source>
@@ -80,35 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explosion3.xnb</Output>
-      <Time>2014-10-18T19:14:38.6904811+03:00</Time>
-    </Item>
-    <Item>
-      <Source>playershoot.wav</Source>
-      <Name>playershoot</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playershoot.xnb</Output>
-      <Time>2014-10-18T20:19:02.7670768+03:00</Time>
-    </Item>
-    <Item>
-      <Source>explode.wav</Source>
-      <Name>explode</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explode.xnb</Output>
-      <Time>2014-10-18T20:22:49.3222207+03:00</Time>
-    </Item>
-    <Item>
-      <Source>theme.mp3</Source>
-      <Name>theme</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.xnb</Output>
-      <Extra>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.wma</Extra>
-      <Time>2014-10-18T20:23:16.684696+03:00</Time>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>menuImage.png</Source>
@@ -117,7 +44,89 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\menuImage.xnb</Output>
-      <Time>2014-10-18T21:06:17.2563316+03:00</Time>
+      <Time>2014-10-18T12:36:24+03:00</Time>
+    </Item>
+    <Item>
+      <Source>ship.png</Source>
+      <Name>ship</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
+      <Time>2014-10-20T17:25:30.3100367+03:00</Time>
+    </Item>
+    <Item>
+      <Source>playerLaser.png</Source>
+      <Name>playerLaser</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerLaser.xnb</Output>
+      <Time>2014-10-20T17:46:57.5676521+03:00</Time>
+    </Item>
+    <Item>
+      <Source>enemyLaser.png</Source>
+      <Name>enemyLaser</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyLaser.xnb</Output>
+      <Time>2014-10-20T17:50:49.8021095+03:00</Time>
+    </Item>
+    <Item>
+      <Source>enemyShip.png</Source>
+      <Name>enemyShip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyShip.xnb</Output>
+      <Time>2014-10-20T18:03:26.4524744+03:00</Time>
+    </Item>
+    <Item>
+      <Source>georgia.spritefont</Source>
+      <Name>georgia</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\georgia.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
+    </Item>
+    <Item>
+      <Source>playershoot.wav</Source>
+      <Name>playershoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playershoot.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
+    </Item>
+    <Item>
+      <Source>explode.wav</Source>
+      <Name>explode</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explode.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
+    </Item>
+    <Item>
+      <Source>00. 21 Illuminati.mp3</Source>
+      <Name>00. 21 Illuminati</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\00. 21 Illuminati.xnb</Output>
+      <Extra>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\00. 21 Illuminati.wma</Extra>
+      <Time>2014-03-29T18:53:10+02:00</Time>
+    </Item>
+    <Item>
+      <Source>skull.png</Source>
+      <Name>skull</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\skull.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace _2DShooter
 {
-    public class Bullet
+    public class Bullet : IDrawable
     {
         public Rectangle boundingBox;
         public Texture2D texture;

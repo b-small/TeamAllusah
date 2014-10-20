@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace _2DShooter
 {
-    public class Asteroid
+    public class Asteroid : IDrawable
     {
 
         public Texture2D texture;
@@ -19,7 +19,6 @@ namespace _2DShooter
         public Rectangle boundingBox;
         public float rotationAngle; // rotation of the sprite
         public int speed;
-
 
         public bool isVisible;
         Random random = new Random();
@@ -56,10 +55,10 @@ namespace _2DShooter
                 position.Y = -50;
             }
 
-            //float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //rotationAngle += elapsed;
-            //float circle = MathHelper.Pi * 2;
-            //rotationAngle = rotationAngle % circle;
+            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            rotationAngle += elapsed;
+            float circle = MathHelper.Pi * 2;
+            rotationAngle = rotationAngle % circle;
 
         }
 
