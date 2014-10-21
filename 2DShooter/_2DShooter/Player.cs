@@ -12,22 +12,43 @@ namespace _2DShooter
 {
     class Player : GameCharacter, IMovable
     {
-        public Texture2D healthTexture;
-        public Vector2 healthBarPosition;
-        public bool isColliding;
-        public Rectangle healthRectangle;
-        public Vector2 position;
+        private Texture2D healthTexture;
+        private Vector2 healthBarPosition;
+        private bool isColliding;
+        private Rectangle healthRectangle;
 
+        public Vector2 position;
         SoundManager sound = new SoundManager();
 
         public Player()
             : base()
         {
-            isColliding = false;
-            healthBarPosition = new Vector2(50, 50);
+            this.IsColliding = false;
+            this.HealthBarPosition = new Vector2(50, 50);
             position = new Vector2(400, 900);
         }
 
+        public Texture2D HealthTexture
+        {
+            get { return this.healthTexture; }
+            set { this.healthTexture = value; }
+        }
+        public Vector2 HealthBarPosition
+        {
+            get { return this.healthBarPosition; }
+            set { this.healthBarPosition = value; }
+        }
+        public bool IsColliding
+        {
+            get { return this.isColliding; }
+            set { this.isColliding = value; }
+        }
+        public Rectangle HealthRectangle
+        {
+            get { return this.healthRectangle; }
+            set { this.healthRectangle = value; }
+        }
+   
         // load content
         public override void LoadContent(ContentManager Content)
         {
@@ -40,8 +61,8 @@ namespace _2DShooter
         // draw 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, position, Color.White);
-            spriteBatch.Draw(healthTexture, healthRectangle, Color.White);
+            spriteBatch.Draw(this.Texture, position, Color.White);
+            spriteBatch.Draw(this.HealthTexture, this.HealthRectangle, Color.White);
 
             foreach (Bullet b in BulletList)
             {
@@ -64,22 +85,22 @@ namespace _2DShooter
             // Ship Controls
             if (keyState.IsKeyDown(Keys.W))
             {
-                position.Y = position.Y - Speed;
+                position.Y = position.Y - this.Speed;
             }
 
             if (keyState.IsKeyDown(Keys.A))
             {
-                position.X = position.X - Speed;
+                position.X = position.X - this.Speed;
             }
 
             if (keyState.IsKeyDown(Keys.S))
             {
-                position.Y = position.Y + Speed;
+                position.Y = position.Y + this.Speed;
             }
 
             if (keyState.IsKeyDown(Keys.D))
             {
-                position.X = position.X + Speed;
+                position.X = position.X + this.Speed;
             }
 
             // Keep player ship in the screen bounds
@@ -108,7 +129,7 @@ namespace _2DShooter
         {
             // read the keyboard every frame
             BoundingBox = new Rectangle((int)position.X, (int)position.Y, Texture.Width, Texture.Height);
-            healthRectangle = new Rectangle((int)healthBarPosition.X, (int)healthBarPosition.Y, Health, 25);
+            this.HealthRectangle = new Rectangle((int)this.HealthBarPosition.X, (int)this.HealthBarPosition.Y, Health, 25);
 
             // UpdateBullets();
             Move();
@@ -125,10 +146,10 @@ namespace _2DShooter
             {
                 sound.playerShootSound.Play();
                 Bullet newBullet = new Bullet(BulletTexture);
-                newBullet.position = new Vector2(position.X + 32 - newBullet.texture.Width / 2,
+                newBullet.position = new Vector2(position.X + 32 - newBullet.Texture.Width / 2,
                                                  position.Y + 30);
 
-                newBullet.isVisible = true;
+                newBullet.IsVisible = true;
 
                 if (BulletList.Count() < 20)
                 {
@@ -146,19 +167,19 @@ namespace _2DShooter
         {
             foreach (Bullet b in BulletList)
             {
-                b.boundingBox = new Rectangle((int)b.position.X, (int)b.position.X, b.texture.Width, b.texture.Height);
-                b.position.Y = b.position.Y - b.speed;
+                b.BoundingBox = new Rectangle((int)b.position.X, (int)b.position.X, b.Texture.Width, b.Texture.Height);
+                b.position.Y = b.position.Y - b.Speed;
 
                 // if bullet hits the top of screen make it invisible
                 if (b.position.Y <= 0)
                 {
-                    b.isVisible = false;
+                    b.IsVisible = false;
                 }
             }
 
             for (int i = 0; i < BulletList.Count; i++)
             {
-                if (!BulletList[i].isVisible)
+                if (!BulletList[i].IsVisible)
                 {
                     BulletList.RemoveAt(i);
                     i--;

@@ -9,26 +9,20 @@ using Microsoft.Xna.Framework.Input;
 
 namespace _2DShooter
 {
-    public class Explosion : IDrawable
+    public class Explosion : GameUnit
     {
-        public Texture2D texture;
-        public Vector2 position;
+
         public float timer, interval;
-        public Vector2 origin;
         public int currentFrame, spriteWidth, spriteHeight;
-        public Rectangle sourceRect;
-        public bool isVisible;
 
         public Explosion(Texture2D newTexture, Vector2 newPosition)
+            : base(newTexture, newPosition)
         {
-            texture = newTexture;
-            position = newPosition;
             timer = 0f;
-            interval = 20f;
+            interval = 30f;
             currentFrame = 1;
-            spriteWidth = 80;
-            spriteHeight = 120;
-            isVisible = true;
+            spriteWidth = 40;
+            spriteHeight = 60;
         }
 
         public void LoadContent(ContentManager Content)
@@ -44,26 +38,26 @@ namespace _2DShooter
             {
                 currentFrame++;
                 //reset timer
-                //timer = 0f;
+                timer = 0f;
             }
 
             //we're on the last frame
             if (currentFrame == 17)
             {
-                isVisible = false;
+                this.IsVisible = false;
                 currentFrame = 0;
                 timer = 0f;
             }
 
-            sourceRect = new Rectangle(currentFrame * spriteWidth, 0, spriteWidth, spriteHeight);
-            origin = new Vector2(sourceRect.Width / 2, sourceRect.Height / 2);
+            this.BoundingBox = new Rectangle(currentFrame * spriteWidth, 0, spriteWidth, spriteHeight);
+            origin = new Vector2(this.BoundingBox.Width, this.BoundingBox.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (isVisible)
+            if (this.IsVisible)
             {
-                spriteBatch.Draw(texture, position, sourceRect, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 0);
+                spriteBatch.Draw(this.Texture, position, this.BoundingBox, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 0);
             }
         }
     }
