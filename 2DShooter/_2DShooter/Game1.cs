@@ -161,7 +161,7 @@ namespace _2DShooter
 
             for (int i = 0; i < asteroidList.Count; i++)
             {
-                if (!asteroidList[i].isVisible)
+                if (!asteroidList[i].IsVisible)
                 {
                     asteroidList.RemoveAt(i);
                     i--;
@@ -200,7 +200,7 @@ namespace _2DShooter
         {
             for (int i = 0; i < explosionList.Count; i++)
             {
-                if (!explosionList[i].isVisible)
+                if (!explosionList[i].IsVisible)
                 {
                     explosionList.RemoveAt(i);
                     i--;
@@ -224,16 +224,16 @@ namespace _2DShooter
                 //bullet collision
                 for (int i = 0; i < e.BulletList.Count; i++)
                 {
-                    if (player.BoundingBox.Intersects(e.BulletList[i].boundingBox))
+                    if (player.BoundingBox.Intersects(e.BulletList[i].BoundingBox))
                     {
                         player.Health -= enemyBulletDamage;
-                        e.BulletList[i].isVisible = false;
+                        e.BulletList[i].IsVisible = false;
                     }
                 }
 
                 for (int i = 0; i < player.BulletList.Count; i++)
                 {
-                    if (player.BulletList[i].boundingBox.Intersects(e.BoundingBox))
+                    if (player.BulletList[i].BoundingBox.Intersects(e.BoundingBox))
                     {
                         sound.explodeSound.Play();
                         try
@@ -245,7 +245,7 @@ namespace _2DShooter
                             Console.WriteLine(ex.Message);
                         }
                         hud.playerScore += 20;
-                        player.BulletList[i].isVisible = false;
+                        player.BulletList[i].IsVisible = false;
                         e.IsVisible = false;
                     }
                 }
@@ -261,16 +261,16 @@ namespace _2DShooter
             //update&check asteroids for collision
             foreach (Asteroid a in asteroidList)
             {
-                if (a.boundingBox.Intersects(player.BoundingBox))
+                if (a.BoundingBox.Intersects(player.BoundingBox))
                 {
                     player.Health -= 20;
-                    a.isVisible = false;
+                    a.IsVisible = false;
                 }
 
                 //iterate through the bulletList and check for collision
                 for (int i = 0; i < player.BulletList.Count; i++)
                 {
-                    if (a.boundingBox.Intersects(player.BulletList[i].boundingBox))
+                    if (a.BoundingBox.Intersects(player.BulletList[i].BoundingBox))
                     {
                         sound.explodeSound.Play();
                         try
@@ -282,8 +282,8 @@ namespace _2DShooter
                             Console.WriteLine(ex.Message);
                         }
                         hud.playerScore += 5;
-                        a.isVisible = false;
-                        player.BulletList.ElementAt(i).isVisible = false;
+                        a.IsVisible = false;
+                        player.BulletList.ElementAt(i).IsVisible = false;
                     }
                 }
 
