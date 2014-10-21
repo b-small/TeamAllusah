@@ -52,19 +52,19 @@ namespace _2DShooter
         {
             foreach (Bullet b in BulletList)
             {
-                b.boundingBox = new Rectangle((int)b.position.X, (int)b.position.X, b.texture.Width, b.texture.Height);
-                b.position.Y = b.position.Y + b.speed;
+                b.BoundingBox = new Rectangle((int)b.position.X, (int)b.position.X, b.Texture.Width, b.Texture.Height);
+                b.position.Y = b.position.Y + b.Speed;
 
                 // if bullet hits the top of screen make it invisible
                 if (b.position.Y >= 950)
                 {
-                    b.isVisible = false;
+                    b.IsVisible = false;
                 }
             }
 
             for (int i = 0; i < BulletList.Count; i++)
             {
-                if (!BulletList[i].isVisible)
+                if (!BulletList[i].IsVisible)
                 {
                     BulletList.RemoveAt(i);
                     i--;
@@ -82,9 +82,9 @@ namespace _2DShooter
             if (BulletDelay <= 0)
             {
                 Bullet newBullet = new Bullet(BulletTexture);
-                newBullet.position = new Vector2(position.X + Texture.Width / 2 - newBullet.texture.Width / 2, position.Y + 30);
+                newBullet.position = new Vector2(position.X + Texture.Width / 2 - newBullet.Texture.Width / 2, position.Y + 30);
 
-                newBullet.isVisible = true;
+                newBullet.IsVisible = true;
 
                 if (BulletList.Count() < 20)
                 {

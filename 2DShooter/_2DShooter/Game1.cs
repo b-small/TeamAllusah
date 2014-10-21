@@ -179,6 +179,7 @@ namespace _2DShooter
                 try
                 {
                     enemyList.Add(new Enemy(Content.Load<Texture2D>("enemyShip"), new Vector2(randX, randY), Content.Load<Texture2D>("enemyLaser")));
+                    // new bad character
                 }
                 catch (ImageNotFoundException ex)
                 {
