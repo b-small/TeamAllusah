@@ -19,7 +19,7 @@ namespace _2DShooter
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.Texture, this.Position, Color.White);
+            spriteBatch.Draw(this.Texture, this.position, Color.White);
         }
     }
 }
