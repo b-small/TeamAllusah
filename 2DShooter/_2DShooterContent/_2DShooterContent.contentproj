@@ -79,6 +79,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="skull.png">
+      <Name>skull</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="00.ogg">
+      <Name>00</Name>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="menuImage.png">
       <Name>menuImage</Name>
       <Importer>TextureImporter</Importer>
@@ -93,8 +105,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="playerLaser.png">
-      <Name>playerLaser</Name>
+    <Compile Include="enemyship.png">
+      <Name>enemyship</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -107,22 +119,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enemyShip.png">
-      <Name>enemyShip</Name>
+    <Compile Include="playerLaser.png">
+      <Name>playerLaser</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="skull.png">
-      <Name>skull</Name>
+    <Compile Include="shipred.png">
+      <Name>shipred</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="00.ogg">
-      <Name>00</Name>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

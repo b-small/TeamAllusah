@@ -9,93 +9,41 @@ using Microsoft.Xna.Framework.Content;
 
 namespace _2DShooter
 {
-    public class Enemy : GameCharacter
+    public abstract class Enemy : GameCharacter
     {
-
-        public int currentDifficultyLevel;
-        public Vector2 position;
+        private Texture2D newTexture;
+        private Texture2D newBulletTexture1;
+        private Texture2D newBulletTexture2;
+                      
 
         public Enemy(Texture2D newTexture, Vector2 newPosition, Texture2D newBulletTexture)
             : base(newTexture, newBulletTexture)
-        {
-            position = newPosition;
-            currentDifficultyLevel = 1;
+        {          
         }
 
-        public override void Update(GameTime gameTime)
+        public Enemy(Texture2D newTexture, Texture2D newBulletTexture1, Texture2D newBulletTexture2)
         {
-            BoundingBox = new Rectangle((int)position.X, (int)position.Y, Texture.Width, Texture.Height);
-
-            position.Y += Speed;
-
-            if (position.Y >= 950)
-            {
-                position.Y = -75;
-            }
-
-            Shoot();
-            UpdateBullets();
+            // TODO: Complete member initialization
+            this.newTexture = newTexture;
+            this.newBulletTexture1 = newBulletTexture1;
+            this.newBulletTexture2 = newBulletTexture2;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public abstract void Update(GameTime gameTime)
         {
-            spriteBatch.Draw(Texture, position, Color.White);
+        }
 
-            foreach (Bullet b in BulletList)
-            {
-                b.Draw(spriteBatch);
-            }
+        public abstract void Draw(SpriteBatch spriteBatch)
+        {           
         }
 
 
-        public override void UpdateBullets()
-        {
-            foreach (Bullet b in BulletList)
-            {
-                b.BoundingBox = new Rectangle((int)b.position.X, (int)b.position.X, b.Texture.Width, b.Texture.Height);
-                b.position.Y = b.position.Y + b.Speed;
-
-                // if bullet hits the top of screen make it invisible
-                if (b.position.Y >= 950)
-                {
-                    b.IsVisible = false;
-                }
-            }
-
-            for (int i = 0; i < BulletList.Count; i++)
-            {
-                if (!BulletList[i].IsVisible)
-                {
-                    BulletList.RemoveAt(i);
-                    i--;
-                }
-            }
+        public abstract void UpdateBullets()
+        {            
         }
 
-        public override void Shoot()
+        public abstract void Shoot()
         {
-            if (BulletDelay >= 0)
-            {
-                BulletDelay--;
-            }
-
-            if (BulletDelay <= 0)
-            {
-                Bullet newBullet = new Bullet(BulletTexture);
-                newBullet.position = new Vector2(position.X + Texture.Width / 2 - newBullet.Texture.Width / 2, position.Y + 30);
-
-                newBullet.IsVisible = true;
-
-                if (BulletList.Count() < 20)
-                {
-                    BulletList.Add(newBullet);
-                }
-            }
-
-            if (BulletDelay == 0)
-            {
-                BulletDelay = 40;
-            }
         }
 
         public override void LoadContent(ContentManager Content)

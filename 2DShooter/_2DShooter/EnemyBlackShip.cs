@@ -15,7 +15,7 @@ namespace _2DShooter
          public Vector2 position;
 
          public EnemyBlackShip(Texture2D newTexture, Vector2 newPosition, Texture2D newBulletTexture)
-             : base(newTexture, newBulletTexture)
+             : base(newTexture, newPosition, newBulletTexture)
          {
              position = newPosition;
              currentDifficultyLevel = 1;

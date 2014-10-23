@@ -22,7 +22,7 @@ namespace _2DShooter
         public Texture2D gameoverImage;
 
         List<Asteroid> asteroidList = new List<Asteroid>();
-        List<Enemy> enemyList = new List<Enemy>();
+        List<EnemyOtherShip> enemyList = new List<EnemyOtherShip>();
         List<Explosion> explosionList = new List<Explosion>();
 
         Player player = new Player();
@@ -174,11 +174,12 @@ namespace _2DShooter
             int randY = random.Next(-600, -50);
             int randX = random.Next(0, 750);
 
-            if (enemyList.Count() < 3)
+            if (enemyList.Count() < 2)
             {
                 try
                 {
-                    enemyList.Add(new Enemy(Content.Load<Texture2D>("enemyShip"), new Vector2(randX, randY), Content.Load<Texture2D>("enemyLaser")));
+                    //enemyList.Add(new EnemyBlackShip(Content.Load<Texture2D>("enemyShip"), new Vector2(randX, randY), Content.Load<Texture2D>("enemyLaser")));
+                    enemyList.Add(new EnemyOtherShip(Content.Load<Texture2D>("shipred"), new Vector2(randX, randY), Content.Load<Texture2D>("enemyLaser")));
                     // new bad character
                 }
                 catch (ImageNotFoundException ex)
