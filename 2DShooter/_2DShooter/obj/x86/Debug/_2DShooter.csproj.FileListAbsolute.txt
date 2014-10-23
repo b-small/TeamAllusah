@@ -33,8 +33,6 @@ C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explosion3.xnb
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playershoot.xnb
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explode.xnb
-C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.xnb
-C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\theme.wma
 C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\menuImage.xnb
 C:\Users\user\Desktop\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb
 C:\Users\user\Desktop\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb
@@ -180,3 +178,9 @@ C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-
 C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.exe
 C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\obj\x86\Debug\_2DShooter.pdb
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\shipRed.xnb
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyLaser.xnb
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerLaser.xnb
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\skull.xnb
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\00. 21 Illuminati.xnb
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\00. 21 Illuminati.wma

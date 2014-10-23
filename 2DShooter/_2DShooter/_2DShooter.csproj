@@ -82,12 +82,9 @@
     <Compile Include="AbstractDataTypes\GameUnit.cs" />
     <Compile Include="HighScoreData.cs" />
     <Compile Include="HUD.cs" />
-    <Compile Include="IDontCare.cs" />
-    <Compile Include="Interfaces\IDontCare.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IExplosible.cs" />
     <Compile Include="Exceptions\ImageNotFoundException.cs" />
-    <Compile Include="Interfaces\ILoveIt.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IShooting.cs" />
     <Compile Include="SoundManager.cs" />
