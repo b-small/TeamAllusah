@@ -44,13 +44,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="playerbullet.png">
-      <Name>playerbullet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="healthbar.png">
       <Name>healthbar</Name>
       <Importer>TextureImporter</Importer>
@@ -60,13 +53,6 @@
   <ItemGroup>
     <Compile Include="enemyship.png">
       <Name>enemyship</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="EnemyBullet.png">
-      <Name>EnemyBullet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
