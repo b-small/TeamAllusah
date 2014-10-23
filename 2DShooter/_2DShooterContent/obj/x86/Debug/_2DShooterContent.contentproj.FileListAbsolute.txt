@@ -1,0 +1,8 @@
+C:\Users\xeruvim\documents\visual studio 2013\Projects\2DShooter\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\xeruvim\Projects\TeamAllusah\WorkingVersion\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\TeamAllusahWorkingPicAndSound\TeamAllusah-master\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\TeamAllusah\TeamAllusah-master\2DShooter\_2DShooterContent\obj\x86\Debug\_2DShooterContent.contentprojResolveAssemblyReference.cache
