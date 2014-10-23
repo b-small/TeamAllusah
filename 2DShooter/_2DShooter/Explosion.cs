@@ -12,17 +12,80 @@ namespace _2DShooter
     public class Explosion : GameUnit
     {
 
-        public float timer, interval;
-        public int currentFrame, spriteWidth, spriteHeight;
+        private float timer, interval;
+        private int currentFrame, spriteWidth, spriteHeight;
 
         public Explosion(Texture2D newTexture, Vector2 newPosition)
             : base(newTexture, newPosition)
         {
-            timer = 0f;
-            interval = 30f;
-            currentFrame = 1;
-            spriteWidth = 40;
-            spriteHeight = 60;
+            this.Timer = 0f;
+            this.Interval = 30f;
+            this.CurrentFrame = 1;
+            this.SpriteWidth = 64;
+            this.SpriteHeight = 64;
+        }
+
+        public float Timer
+        {
+            get { return this.timer; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("timer value can not be negative");
+                }
+                this.timer = value;
+            }
+        }
+
+        public float Interval
+        {
+            get { return this.interval; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("interval value can not be negative");
+                }
+                this.interval = value;
+            }
+        }
+
+        public int CurrentFrame{
+            get { return this.currentFrame; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("current sprite frame value can not be negative");
+                }
+                this.currentFrame = value;
+            }
+        }
+
+        public int SpriteWidth {
+            get { return this.spriteWidth; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("sprite width value can not be negative");
+                }
+                this.spriteWidth = value;
+            }
+        }
+
+        public int SpriteHeight
+        {
+            get { return this.spriteHeight; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("sprite height value can not be negative");
+                }
+                this.spriteHeight = value;
+            }
         }
 
         public void LoadContent(ContentManager Content)
@@ -32,28 +95,28 @@ namespace _2DShooter
         public void Update(GameTime gameTime)
         {
             //increase the timer by nr of mlsecs since last update
-            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            this.Timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (timer > interval)
+            if (this.Timer > this.Interval)
             {
-                currentFrame++;
+                this.CurrentFrame++;
                 //reset timer
-                timer = 0f;
+                this.Timer = 0f;
             }
 
             //we're on the last frame
-            if (currentFrame == 17)
+            if (this.CurrentFrame == 17)
             {
                 this.IsVisible = false;
-                currentFrame = 0;
-                timer = 0f;
+                this.CurrentFrame = 0;
+                this.Timer = 0f;
             }
 
-            this.BoundingBox = new Rectangle(currentFrame * spriteWidth, 0, spriteWidth, spriteHeight);
+            this.BoundingBox = new Rectangle(CurrentFrame * SpriteWidth, 0, SpriteWidth, SpriteHeight);
             origin = new Vector2(this.BoundingBox.Width, this.BoundingBox.Height);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (this.IsVisible)
             {

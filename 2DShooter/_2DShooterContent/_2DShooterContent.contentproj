@@ -44,8 +44,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="playerbullet.png">
+      <Name>playerbullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="healthbar.png">
       <Name>healthbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="enemyship.png">
+      <Name>enemyship</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnemyBullet.png">
+      <Name>EnemyBullet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -79,20 +100,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="skull.png">
-      <Name>skull</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="00.ogg">
-      <Name>00</Name>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="menuImage.png">
-      <Name>menuImage</Name>
+    <Compile Include="MenuImage.png">
+      <Name>MenuImage</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -105,8 +114,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enemyship.png">
-      <Name>enemyship</Name>
+    <Compile Include="shipRed.png">
+      <Name>shipRed</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -126,10 +135,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="shipred.png">
-      <Name>shipred</Name>
+    <Compile Include="skull.png">
+      <Name>skull</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="00. 21 Illuminati.mp3">
+      <Name>00. 21 Illuminati</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

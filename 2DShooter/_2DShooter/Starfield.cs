@@ -12,16 +12,48 @@ namespace _2DShooter
 {
     public class Starfield
     {
-        public Texture2D texture;
-        public Vector2 bgPos1, bgPos2;
-        public int speed;
+        private Texture2D texture;
+        private Vector2 bgPos1, bgPos2;
+        private int speed;
 
         public Starfield()
         {
-            texture = null;
-            bgPos1 = new Vector2(0, 0);
-            bgPos2 = new Vector2(0, -950);
-            speed = 5;
+            this.Texture = null;
+            this.BgPos1 = new Vector2(0, 0);
+            this.BgPos2 = new Vector2(0, -950);
+            this.Speed = 5;
+        }
+
+        public Texture2D Texture
+        {
+            get { return this.texture; }
+            set
+            { this.texture = value; }
+        }
+
+        public Vector2 BgPos1
+        {
+            get { return this.bgPos1; }
+            set { this.bgPos1 = value; }
+        }
+
+        public Vector2 BgPos2
+        {
+            get { return this.bgPos2; }
+            set { this.bgPos2 = value; }
+        }
+
+        public int Speed
+        {
+            get { return this.speed; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Speed can not be a negative number");
+                }
+                this.speed = value;
+            }
         }
 
         public void LoadContent(ContentManager Content)

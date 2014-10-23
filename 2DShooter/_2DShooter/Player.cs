@@ -16,9 +16,9 @@ namespace _2DShooter
         private Vector2 healthBarPosition;
         private bool isColliding;
         private Rectangle healthRectangle;
-
         public Vector2 position;
-        SoundManager sound = new SoundManager();
+
+        SoundManager sm = new SoundManager();
 
         public Player()
             : base()
@@ -31,13 +31,29 @@ namespace _2DShooter
         public Texture2D HealthTexture
         {
             get { return this.healthTexture; }
-            set { this.healthTexture = value; }
+            set
+            {
+                if (value.Equals(null))
+                {
+                    throw new ArgumentNullException("health texture has a value of null");
+                }
+                this.healthTexture = value;
+            }
         }
+
         public Vector2 HealthBarPosition
         {
             get { return this.healthBarPosition; }
-            set { this.healthBarPosition = value; }
+            set
+            {
+                if (value.Equals(null))
+                {
+                    throw new ArgumentNullException("health bar position has a value of null");
+                }
+                this.healthBarPosition = value;
+            }
         }
+
         public bool IsColliding
         {
             get { return this.isColliding; }
@@ -46,23 +62,31 @@ namespace _2DShooter
         public Rectangle HealthRectangle
         {
             get { return this.healthRectangle; }
-            set { this.healthRectangle = value; }
+            set
+            {
+                if (value.Equals(null))
+                {
+                    throw new ArgumentNullException("health rectangle has a null value");
+                }
+
+                this.healthRectangle = value;
+            }
         }
-   
+
         // load content
         public override void LoadContent(ContentManager Content)
         {
             Texture = Content.Load<Texture2D>("ship");
             BulletTexture = Content.Load<Texture2D>("playerLaser");
             healthTexture = Content.Load<Texture2D>("healthbar");
-            sound.LoadContent(Content);
+            sm.LoadContent(Content);
         }
 
         // draw 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.Texture, position, Color.White);
-            spriteBatch.Draw(this.HealthTexture, this.HealthRectangle, Color.White);
+            spriteBatch.Draw(Texture, position, Color.White);
+            spriteBatch.Draw(healthTexture, healthRectangle, Color.White);
 
             foreach (Bullet b in BulletList)
             {
@@ -83,24 +107,24 @@ namespace _2DShooter
             UpdateBullets();
 
             // Ship Controls
-            if (keyState.IsKeyDown(Keys.W))
+            if (keyState.IsKeyDown(Keys.W) || keyState.IsKeyDown(Keys.Up))
             {
-                position.Y = position.Y - this.Speed;
+                position.Y = position.Y - Speed;
             }
 
-            if (keyState.IsKeyDown(Keys.A))
+            if (keyState.IsKeyDown(Keys.A) || keyState.IsKeyDown(Keys.Left))
             {
-                position.X = position.X - this.Speed;
+                position.X = position.X - Speed;
             }
 
-            if (keyState.IsKeyDown(Keys.S))
+            if (keyState.IsKeyDown(Keys.S) || keyState.IsKeyDown(Keys.Down))
             {
-                position.Y = position.Y + this.Speed;
+                position.Y = position.Y + Speed;
             }
 
-            if (keyState.IsKeyDown(Keys.D))
+            if (keyState.IsKeyDown(Keys.D) || keyState.IsKeyDown(Keys.Right))
             {
-                position.X = position.X + this.Speed;
+                position.X = position.X + Speed;
             }
 
             // Keep player ship in the screen bounds
@@ -129,7 +153,7 @@ namespace _2DShooter
         {
             // read the keyboard every frame
             BoundingBox = new Rectangle((int)position.X, (int)position.Y, Texture.Width, Texture.Height);
-            this.HealthRectangle = new Rectangle((int)this.HealthBarPosition.X, (int)this.HealthBarPosition.Y, Health, 25);
+            healthRectangle = new Rectangle((int)healthBarPosition.X, (int)healthBarPosition.Y, Health, 25);
 
             // UpdateBullets();
             Move();
@@ -144,7 +168,7 @@ namespace _2DShooter
 
             if (BulletDelay <= 0)
             {
-                sound.playerShootSound.Play();
+                sm.PlayerShootSound.Play();
                 Bullet newBullet = new Bullet(BulletTexture);
                 newBullet.position = new Vector2(position.X + 32 - newBullet.Texture.Width / 2,
                                                  position.Y + 30);

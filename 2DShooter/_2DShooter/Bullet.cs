@@ -10,25 +10,17 @@ using Microsoft.Xna.Framework.Input;
 
 namespace _2DShooter
 {
-    public class Bullet : IDrawable
+    public class Bullet : GameUnit
     {
-        public Rectangle boundingBox;
-        public Texture2D texture;
-        public Vector2 origin;
-        public Vector2 position;
-        public bool isVisible;
-        public float speed;
 
         public Bullet(Texture2D newTexture)
+            : base(newTexture)
         {
-            speed = 10;
-            texture = newTexture;
-            isVisible = false;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.Draw(this.Texture, this.position, Color.White);
         }
     }
 }

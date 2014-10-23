@@ -9,28 +9,33 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Storage;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace _2DShooter
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        private int enemyBulletDamage;
+        private Texture2D menuImage;
+        private Texture2D gameoverImage;
+
+        List<IExplosible> asteroidList = new List<IExplosible>();
+        List<IExplosible> enemyList = new List<IExplosible>();
+        List<Explosion> explosionList = new List<Explosion>();
+
+        Player p = new Player();
+        Starfield sf = new Starfield();
+        HUD hud = new HUD();
+        SoundManager sm = new SoundManager();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Random random = new Random();
-        public int enemyBulletDamage;
-        public Texture2D menuImage;
-        public Texture2D gameoverImage;
-
-        List<Asteroid> asteroidList = new List<Asteroid>();
-        List<EnemyOtherShip> enemyList = new List<EnemyOtherShip>();
-        List<Explosion> explosionList = new List<Explosion>();
-
-        Player player = new Player();
-        Starfield starField = new Starfield();
-        HUD hud = new HUD();
-        SoundManager sound = new SoundManager();
+        string currLastScoreToSave = "";
 
         State gameState = State.Menu;
+        MouseState previousMouseState;
 
         public Game1()
         {
@@ -44,28 +49,56 @@ namespace _2DShooter
             graphics.PreferredBackBufferHeight = 800;
             this.Window.Title = "Our 2D Shooter Game";
             Content.RootDirectory = "Content";
-            enemyBulletDamage = 10;
-            menuImage = null;
-            gameoverImage = null;
+            this.EnemyBulletDamage = 10;
+            this.MenuImage = null;
+            this.GameoverImage = null;
+        }
+
+        public int EnemyBulletDamage
+        {
+            get { return this.enemyBulletDamage; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Enemy bullet damage can not be negative");
+                }
+                this.enemyBulletDamage = value;
+            }
+        }
+        public Texture2D MenuImage
+        {
+            get { return this.menuImage; }
+            set
+            {
+                this.menuImage = value;
+            }
+        }
+
+        public Texture2D GameoverImage
+        {
+            get { return this.gameoverImage; }
+            set { this.gameoverImage = value; }
         }
 
         protected override void Initialize()
         {
             base.Initialize();
+            previousMouseState = Mouse.GetState();
         }
 
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            player.LoadContent(Content);
-            starField.LoadContent(Content);
+            p.LoadContent(Content);
+            sf.LoadContent(Content);
             hud.LoadContent(Content);
-            sound.LoadContent(Content);
+            sm.LoadContent(Content);
             try
             {
-                menuImage = Content.Load<Texture2D>("menuImage");
-                gameoverImage = Content.Load<Texture2D>("skull");
+                this.MenuImage = Content.Load<Texture2D>("MenuImage");
+                this.GameoverImage = Content.Load<Texture2D>("skull");
             }
             catch (ImageNotFoundException ex)
             {
@@ -124,15 +157,18 @@ namespace _2DShooter
 
                 case State.Menu:
                     {
-                        starField.Draw(spriteBatch);
-                        spriteBatch.Draw(menuImage, new Vector2(0, 0), Color.White);
+                        sf.Draw(spriteBatch);
+                        spriteBatch.Draw(this.MenuImage, new Vector2(275, 250), Color.White);
                         break;
                     }
 
                 case State.Gameover:
                     {
-                        spriteBatch.Draw(gameoverImage, new Vector2(200, 200), Color.White);
-                        spriteBatch.DrawString(hud.playerScoreFont, "Final score - " + hud.playerScore.ToString(), new Vector2(235, 100), Color.Red);
+                        spriteBatch.Draw(this.GameoverImage, new Vector2(0, 0), Color.White);
+                        spriteBatch.DrawString(hud.PlayerScoreFont, "  G A M E   O V E R\nF I N A L   S C O R E - " + hud.PlayerScore.ToString(), new Vector2(235, 40), Color.Red);
+                        currLastScoreToSave = hud.PlayerScore.ToString();
+                        string highScores = LoadHighScores();
+                        spriteBatch.DrawString(hud.PlayerScoreFont, highScores, new Vector2(600, 600), Color.Red);
                         break;
                     }
             }
@@ -161,7 +197,7 @@ namespace _2DShooter
 
             for (int i = 0; i < asteroidList.Count; i++)
             {
-                if (!asteroidList[i].isVisible)
+                if (!asteroidList[i].IsVisible)
                 {
                     asteroidList.RemoveAt(i);
                     i--;
@@ -172,15 +208,14 @@ namespace _2DShooter
         public void LoadEnemies()
         {
             int randY = random.Next(-600, -50);
-            int randX = random.Next(0, 750);
+            int randX = random.Next(0, 550);
 
-            if (enemyList.Count() < 2)
+            if (enemyList.Count() < 3)
             {
                 try
                 {
-                    //enemyList.Add(new EnemyBlackShip(Content.Load<Texture2D>("enemyShip"), new Vector2(randX, randY), Content.Load<Texture2D>("enemyLaser")));
-                    enemyList.Add(new EnemyOtherShip(Content.Load<Texture2D>("shipred"), new Vector2(randX, randY), Content.Load<Texture2D>("enemyLaser")));
-                    // new bad character
+                    enemyList.Add(new BlackEnemy(Content.Load<Texture2D>("shipRed"), new Vector2(randX, randY), Content.Load<Texture2D>("enemyLaser")));
+                    enemyList.Add(new WhiteEnemy(Content.Load<Texture2D>("enemyship"), new Vector2(randX + 200, randY + 15), Content.Load<Texture2D>("enemyLaser")));
                 }
                 catch (ImageNotFoundException ex)
                 {
@@ -202,7 +237,7 @@ namespace _2DShooter
         {
             for (int i = 0; i < explosionList.Count; i++)
             {
-                if (!explosionList[i].isVisible)
+                if (!explosionList[i].IsVisible)
                 {
                     explosionList.RemoveAt(i);
                     i--;
@@ -210,96 +245,68 @@ namespace _2DShooter
             }
         }
 
-
-        protected void UpdatePlaying(GameTime gameTime)
+        void ManageCollision(List<IExplosible> explosible, int healthReducer, GameTime gameTime)
         {
-            starField.speed = 5;
-
-            foreach (Enemy e in enemyList)
+            foreach (IExplosible e in explosible)
             {
-                if (e.BoundingBox.Intersects(player.BoundingBox))
+                if (e.BoundingBox.Intersects(p.BoundingBox))
                 {
-                    player.Health -= 40;
+                    p.Health -= healthReducer;
                     e.IsVisible = false;
                 }
 
-                //bullet collision
-                for (int i = 0; i < e.BulletList.Count; i++)
+                for (int i = 0; i < p.BulletList.Count; i++)
                 {
-                    if (player.BoundingBox.Intersects(e.BulletList[i].boundingBox))
+                    if (p.BulletList[i].BoundingBox.Intersects(e.BoundingBox))
                     {
-                        player.Health -= enemyBulletDamage;
-                        e.BulletList[i].isVisible = false;
-                    }
-                }
-
-                for (int i = 0; i < player.BulletList.Count; i++)
-                {
-                    if (player.BulletList[i].boundingBox.Intersects(e.BoundingBox))
-                    {
-                        sound.explodeSound.Play();
+                        sm.ExplodeSound.Play();
                         try
                         {
-                            explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(e.position.X, e.position.Y)));
+                            explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(e.position2.X + 50, e.position2.Y + 100)));
                         }
                         catch (ImageNotFoundException ex)
                         {
                             Console.WriteLine(ex.Message);
                         }
-                        hud.playerScore += 20;
-                        player.BulletList[i].isVisible = false;
+                        hud.PlayerScore += 20;
+                        p.BulletList[i].IsVisible = false;
                         e.IsVisible = false;
                     }
                 }
 
+                //bullet collision
+                for (int j = 0; j < e.BulletList.Count; j++)
+                {
+                    if (e.BulletList[j].BoundingBox.Intersects(p.BoundingBox))
+                    {
+                        sm.ExplodeSound.Play();
+                        p.Health -= enemyBulletDamage;
+                        e.BulletList[j].IsVisible = false;
+                    }
+
+                }
                 e.Update(gameTime);
             }
+        }
+        protected void UpdatePlaying(GameTime gameTime)
+        {
+            sf.Speed = 5;
+            ManageCollision(enemyList, 40, gameTime);
+            ManageCollision(asteroidList, 20, gameTime);
 
             foreach (Explosion ex in explosionList)
             {
                 ex.Update(gameTime);
             }
 
-            //update&check asteroids for collision
-            foreach (Asteroid a in asteroidList)
-            {
-                if (a.boundingBox.Intersects(player.BoundingBox))
-                {
-                    player.Health -= 20;
-                    a.isVisible = false;
-                }
-
-                //iterate through the bulletList and check for collision
-                for (int i = 0; i < player.BulletList.Count; i++)
-                {
-                    if (a.boundingBox.Intersects(player.BulletList[i].boundingBox))
-                    {
-                        sound.explodeSound.Play();
-                        try
-                        {
-                            explosionList.Add(new Explosion(Content.Load<Texture2D>("explosion3"), new Vector2(a.position.X, a.position.Y)));
-                        }
-                        catch (ImageNotFoundException ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
-                        hud.playerScore += 5;
-                        a.isVisible = false;
-                        player.BulletList.ElementAt(i).isVisible = false;
-                    }
-                }
-
-                a.Update(gameTime);
-            }
-
-            if (player.Health <= 0)
+            if (p.Health <= 0)
             {
                 gameState = State.Gameover;
             }
 
             hud.Update(gameTime);
-            player.Update(gameTime);
-            starField.Update(gameTime);
+            p.Update(gameTime);
+            sf.Update(gameTime);
             ManageExplosions();
             LoadAsteroids();
             LoadEnemies();
@@ -309,38 +316,40 @@ namespace _2DShooter
         {
             KeyboardState keyState = Keyboard.GetState();
 
-            if (keyState.IsKeyDown(Keys.Enter))
+            if (keyState.IsKeyDown(Keys.Enter) || previousMouseState.LeftButton == ButtonState.Released
+            && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
                 gameState = State.Playing;
-                MediaPlayer.Play(sound.bgMusic);
+                MediaPlayer.Play(sm.BgMusic);
             }
 
-            starField.Update(gameTime);
-            starField.speed = 1;
+            previousMouseState = Mouse.GetState();
+            sf.Update(gameTime);
+            sf.Speed = 1;
         }
 
         protected void UpdateGameover(GameTime gameTime)
         {
             KeyboardState keyState = Keyboard.GetState();
 
-            if (keyState.IsKeyDown(Keys.Escape))
+            if (keyState.IsKeyDown(Keys.Escape) || keyState.IsKeyDown(Keys.Enter))
             {
-                player.position = new Vector2(400, 900);
+                p.position = new Vector2(400, 900);
                 enemyList.Clear();
                 asteroidList.Clear();
-                player.Health = 200;
-                hud.playerScore = 0;
+                p.Health = 200;
+                hud.PlayerScore = 0;
                 gameState = State.Menu;
+                SaveHighScoreData();
             }
 
             MediaPlayer.Stop();
-
         }
 
         protected void DrawPlaying(GameTime gameTime)
         {
-            starField.Draw(spriteBatch);
-            player.Draw(spriteBatch);
+            sf.Draw(spriteBatch);
+            p.Draw(spriteBatch);
 
             foreach (Explosion ex in explosionList)
             {
@@ -359,5 +368,39 @@ namespace _2DShooter
 
             hud.Draw(spriteBatch);
         }
+
+        public void SaveHighScoreData()
+        {
+            ManageHighScores();
+            string dataTillNow = File.ReadAllText("highscores.txt");
+            string dataToSave = dataTillNow + String.Format("{0}", currLastScoreToSave) + Environment.NewLine;
+            File.WriteAllText("highscores.txt", dataToSave);
+        }
+
+        public string LoadHighScores()
+        {
+            string result = "";
+            var top5HighScore = File.ReadLines("highscores.txt")
+    .Select(line => Convert.ToInt32(line))
+    .OrderByDescending(score => score)
+    .Take(5)
+    .Select((score, index) => string.Format("{0}. {1}pts\n", index + 1, score));
+
+            result = String.Join("", top5HighScore);
+            return result;
+        }
+
+        public void ManageHighScores()
+        {
+            var top5HighScore = File.ReadLines("highscores.txt")
+    .Select(line => Convert.ToInt32(line))
+    .OrderByDescending(score => score)
+    .Take(5)
+    .Select((score) => string.Format("{0}{1}", score, Environment.NewLine));
+
+            string dataToSave = String.Join("", top5HighScore);
+            File.WriteAllText("highscores.txt", dataToSave);
+        }
+
     }
 }

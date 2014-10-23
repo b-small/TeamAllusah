@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\space.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>asteroid.png</Source>
@@ -16,8 +16,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\asteroid.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
+    </Item>
+    <Item>
+      <Source>playerbullet.png</Source>
+      <Name>playerbullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\playerbullet.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>healthbar.png</Source>
@@ -25,44 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\healthbar.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
-    </Item>
-    <Item>
-      <Source>explosion3.png</Source>
-      <Name>explosion3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explosion3.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
-    </Item>
-    <Item>
-      <Source>skull.png</Source>
-      <Name>skull</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\skull.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
-    </Item>
-    <Item>
-      <Source>menuImage.png</Source>
-      <Name>menuImage</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\menuImage.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
-    </Item>
-    <Item>
-      <Source>ship.png</Source>
-      <Name>ship</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\healthbar.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>enemyship.png</Source>
@@ -70,8 +43,53 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyship.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyship.xnb</Output>
+      <Time>2014-10-22T14:37:06.8577531+03:00</Time>
+    </Item>
+    <Item>
+      <Source>EnemyBullet.png</Source>
+      <Name>EnemyBullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\EnemyBullet.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
+    </Item>
+    <Item>
+      <Source>explosion3.png</Source>
+      <Name>explosion3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\explosion3.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuImage.png</Source>
+      <Name>MenuImage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\MenuImage.xnb</Output>
+      <Time>2014-10-23T13:18:52.7596452+03:00</Time>
+    </Item>
+    <Item>
+      <Source>ship.png</Source>
+      <Name>ship</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\ship.xnb</Output>
+      <Time>2014-10-22T14:17:40.2875488+03:00</Time>
+    </Item>
+    <Item>
+      <Source>shipRed.png</Source>
+      <Name>shipRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\shipRed.xnb</Output>
+      <Time>2014-10-22T13:53:53.9379581+03:00</Time>
     </Item>
     <Item>
       <Source>enemyLaser.png</Source>
@@ -79,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyLaser.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\enemyLaser.xnb</Output>
+      <Time>2014-10-22T14:06:08.5334517+03:00</Time>
     </Item>
     <Item>
       <Source>playerLaser.png</Source>
@@ -88,17 +106,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playerLaser.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\playerLaser.xnb</Output>
+      <Time>2014-10-22T14:06:15.8901402+03:00</Time>
     </Item>
     <Item>
-      <Source>shipred.png</Source>
-      <Name>shipred</Name>
+      <Source>skull.png</Source>
+      <Name>skull</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\shipred.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\skull.xnb</Output>
+      <Time>2014-10-22T14:34:35.2060054+03:00</Time>
     </Item>
     <Item>
       <Source>georgia.spritefont</Source>
@@ -106,8 +124,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\georgia.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\georgia.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>playershoot.wav</Source>
@@ -115,8 +133,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\playershoot.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\playershoot.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
     <Item>
       <Source>explode.wav</Source>
@@ -124,20 +142,30 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\explode.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\explode.xnb</Output>
+      <Time>2014-10-18T12:36:24+03:00</Time>
     </Item>
-    <BuildSuccessful>false</BuildSuccessful>
+    <Item>
+      <Source>00. 21 Illuminati.mp3</Source>
+      <Name>00. 21 Illuminati</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\00. 21 Illuminati.xnb</Output>
+      <Extra>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\00. 21 Illuminati.wma</Extra>
+      <Time>2014-10-22T19:50:39.8738906+03:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{B81B824F-9857-42F6-AAD5-F47FBE511AE5}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooterContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\xeruvim\Projects\TeamAllusah\2DShooter\_2DShooter\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooterContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\xeruvim\Desktop\bestWorking22.10\versi\TeamAllusah-master4\TeamAllusah-master\TeamAllusah-master\2DShooter\_2DShooter\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

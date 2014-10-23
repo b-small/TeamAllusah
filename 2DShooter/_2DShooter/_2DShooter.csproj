@@ -64,6 +64,7 @@
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -73,24 +74,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
-    <Compile Include="EnemyBlackShip.cs" />
+    <Compile Include="BlackEnemy.cs" />
     <Compile Include="Bullet.cs" />
-    <Compile Include="Enemy.cs" />
+    <Compile Include="AbstractDataTypes\Enemy.cs" />
     <Compile Include="Explosion.cs" />
-    <Compile Include="GameCharacter.cs" />
+    <Compile Include="AbstractDataTypes\GameCharacter.cs" />
+    <Compile Include="AbstractDataTypes\GameUnit.cs" />
+    <Compile Include="HighScoreData.cs" />
     <Compile Include="HUD.cs" />
-    <Compile Include="IDrawable.cs" />
-    <Compile Include="ImageNotFoundException.cs" />
-    <Compile Include="IMovable.cs" />
-    <Compile Include="EnemyOtherShip.cs" />
-    <Compile Include="Shootable.cs" />
+    <Compile Include="IDontCare.cs" />
+    <Compile Include="Interfaces\IDontCare.cs" />
+    <Compile Include="Interfaces\IDrawable.cs" />
+    <Compile Include="Interfaces\IExplosible.cs" />
+    <Compile Include="Exceptions\ImageNotFoundException.cs" />
+    <Compile Include="Interfaces\ILoveIt.cs" />
+    <Compile Include="Interfaces\IMovable.cs" />
+    <Compile Include="Interfaces\IShooting.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="Starfield.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="State.cs" />
+    <Compile Include="EnumTypes\State.cs" />
+    <Compile Include="WhiteEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -128,8 +135,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
